@@ -1,0 +1,8 @@
+def solution(n):
+    result = []
+    answer = 0
+    for i in str(n):
+        result.append(i)
+    for j in result:
+        answer += int(j)
+    return answer
