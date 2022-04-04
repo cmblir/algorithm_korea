@@ -1,0 +1,9 @@
+def solution(array, commands):
+    answer = []
+    result = []
+    for i in commands:
+        result.append(i)
+    for j in range(len(commands)):
+        a = (sorted(array[result[j][0]-1:result[j][1]]))
+        answer.append(a[result[j][2]-1])
+    return answer
