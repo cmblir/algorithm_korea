@@ -1,0 +1,9 @@
+answer = []
+def solution(n, b=1, c=3):
+    if (n==1):
+        answer.append([b,c])
+    else:
+        solution(n-1, b, 6-b-c)
+        answer.append([b,c])
+        solution(n-1, 6-b-c, c)
+    return answer
