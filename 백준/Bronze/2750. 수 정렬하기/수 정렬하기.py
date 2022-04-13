@@ -1,3 +1,4 @@
+# O(n^2)으로 푼 경우
 T = int(input())
 test = []
 for i in range(T):
