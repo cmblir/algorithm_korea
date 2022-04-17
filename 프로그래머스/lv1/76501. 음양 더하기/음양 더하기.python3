@@ -1,0 +1,9 @@
+def solution(absolutes, signs):
+    n = len(absolutes)
+    result = 0
+    for i in range(n):
+        if signs[i] == True:
+            result += absolutes[i]
+        elif signs[i] == False:
+            result -= absolutes[i]
+    return result
