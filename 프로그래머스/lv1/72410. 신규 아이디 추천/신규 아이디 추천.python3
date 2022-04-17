@@ -1,0 +1,29 @@
+def solution(new_id):
+    alpha = "abcdefghijklnmopqrstuvwxyz1234567890-_."
+    id = new_id.lower() # 1 단계소문자 치환
+    for i in id: # 2단계 문자 제거
+        if i not in alpha:
+            id = id.replace(i, "")
+    while ".." in id: # 3단계 연속된 마침표 치환
+        id = id.replace("..",".")
+    while id[0] == "." or id[-1] == ".": # 4단계 첫과 끝 마침표 제거
+        if id[0] == ".": 
+            id = id[0].replace(".","") + id[1:]
+            if len(id) == 0:
+                break
+        if id[-1] == ".":
+            id = id[-1].replace(".","") + id[0:-1]
+            if len(id) == 0:
+                break
+    if len(id) == 0: # 5단계 빈 문자열일 경우
+        id = "a"
+    if len(id) >= 16: # 6단계 길이 15로 조절
+        id = id[0:15]
+        while id[-1] == ".": # 조절중 마지막값이 마침표라면
+            id = id[-1].replace(".","") + id[0:-1]
+    if len(id) <= 2: # 7단계 길이가 2이하인 경우
+        id = list(id)
+        while not len(id) == 3:
+            id.append(id[-1])
+        return "".join(id)
+    return id
