@@ -1,0 +1,9 @@
+def solution(arr):
+    n = len(arr)
+    result = []
+    if n == 1:
+        result.append(-1)
+    else:
+        result = arr
+        result.remove(sorted(arr)[0])
+    return result
