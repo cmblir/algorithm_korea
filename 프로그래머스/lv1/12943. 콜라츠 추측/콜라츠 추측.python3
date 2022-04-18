@@ -1,0 +1,17 @@
+def solution(num):
+    cnt = 0
+    def answer(num):
+        nonlocal cnt
+        if num == 1:
+            if cnt < 500:
+                return cnt
+            else:
+                return -1
+        else:
+            if num % 2 == 0:
+                cnt += 1
+                return answer(num // 2)
+            else:
+                cnt += 1
+                return answer(num * 3 + 1)
+    return answer(num)
