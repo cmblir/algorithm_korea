@@ -1,0 +1,5 @@
+def solution(s):
+    if s in "+,-":
+        return str(s)
+    else:
+        return int(s)
