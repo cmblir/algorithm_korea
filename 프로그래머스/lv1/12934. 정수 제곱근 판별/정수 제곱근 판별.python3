@@ -1,0 +1,8 @@
+def solution(n):
+    n = n**(1/2)
+    if str(n)[-1] == "0":
+        answer = (n+1) ** 2
+        return int(answer)
+    else:
+        answer = -1
+        return answer
