@@ -1,0 +1,10 @@
+def solution(s):
+    cnt = 0
+    num = "1234567890"
+    for i in s:
+        if i in num:
+            cnt += 1
+    if cnt == len(s) and (len(s) == 4 or len(s) == 6):
+        return True
+    else:
+        return False
