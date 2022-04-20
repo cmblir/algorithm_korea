@@ -1,0 +1,6 @@
+def solution(a, b):
+    day_str = 'THU,FRI,SAT,SUN,MON,TUE,WED'
+    mon_lis = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    days = day_str.split(',')
+    answer = days[(sum(mon_lis[:a-1]) + b) % 7]
+    return answer
