@@ -1,0 +1,8 @@
+def solution(n):
+    if n == 1:
+        return "수"
+    if n % 2 == 0:
+        return (n//2) * "수박"
+    else:
+        n -= 1
+        return (n//2) * "수박" + "수"
