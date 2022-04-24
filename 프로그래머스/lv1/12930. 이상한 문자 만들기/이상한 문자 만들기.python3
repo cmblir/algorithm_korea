@@ -1,0 +1,11 @@
+def solution(s):
+    result = ''
+    lst = s.split(' ')
+    for i in lst:
+        for j in range(len(i)):
+            if j % 2 == 0:
+                result += i[j].upper()
+            else:
+                result += i[j].lower()
+        result += ' '
+    return result[0:-1]
