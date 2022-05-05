@@ -1,0 +1,8 @@
+import math # 수학 라이브러리를 import
+def solution(arr):
+    def lcm(x, y):
+        return x * y // math.gcd(x, y) # 들어간 두 값의 곲 나누기 공약수
+    while True:
+        arr.append(lcm(arr.pop(), arr.pop())) # 리스트의 끝에서 2개씩 빼서 계산한다.
+        if len(arr) == 1: # 만약 1개가 남았을 때
+            return arr[0]
