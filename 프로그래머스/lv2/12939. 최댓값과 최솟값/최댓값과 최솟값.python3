@@ -1,0 +1,4 @@
+def solution(s):
+    h = [int(i) for i in s.split()]
+    result = str(min(h)), str(max(h))
+    return " ".join(result)
