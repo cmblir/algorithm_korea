@@ -1,0 +1,13 @@
+def solution(n):
+    if n[0] == ")" or n[-1] == "(" or len(n) % 2 != 0:
+        return False
+    cnt = 0
+    for i in range(len(n)):
+        if cnt < 0:
+            break
+        if n[i] == "(":
+            cnt += 1
+        else:
+            cnt -= 1
+    
+    return True if cnt == 0 else False
