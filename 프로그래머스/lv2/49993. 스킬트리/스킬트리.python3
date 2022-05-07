@@ -1,0 +1,14 @@
+def solution(skill, skill_trees):
+    answer = 0
+
+    for skills in skill_trees:
+        skill_list = list(skill) # 스킬트리가 돌아가는 동안 계속해서 기존 선행스킬을 다시 불러온다.
+
+        for s in skills: # 스킬트리중에서
+            if s in skill: # 만약 해당 스킬이 있는 스킬트리 값만 가져온다.
+                if s != skill_list.pop(0): # 해당 값이 첫번쨰 값이 아니라면 해당 값을 뺀뒤
+                    break # 다음 스킬트리로 넘어간다.
+        else:
+            answer += 1
+
+    return answer
