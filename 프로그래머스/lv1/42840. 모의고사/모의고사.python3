@@ -4,18 +4,18 @@ def solution(answers):
     cnt = {"1":0,
     "2":0,
     "3":0}
-    a = [1, 2, 3, 4, 5]
-    b = [2, 1, 2, 3, 2, 4, 2, 5]
-    c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
-    for i in range(len(answers)):
-        if answers[i] == a[i%len(a)]:
+    a = [1, 2, 3, 4, 5] # 1번 수포자
+    b = [2, 1, 2, 3, 2, 4, 2, 5] # 2번 수포자
+    c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5] # 3번 수포자
+    for i in range(len(answers)): 
+        if answers[i] == a[i%len(a)]: # 수포자 방식에서 해당 번째 위치로 찾기
             cnt["1"] += 1
-        if answers[i] == b[i%len(b)]:
+        if answers[i] == b[i%len(b)]: # 수포자 방식에서 해당 번째 위치로 찾기
             cnt["2"] += 1
-        if answers[i] == c[i%len(c)]:
+        if answers[i] == c[i%len(c)]: # 수포자 방식에서 해당 번째 위치로 찾기
             cnt["3"] += 1
     
-    for k, j in cnt.items():
+    for k, j in cnt.items(): # 딕셔너리에서 꺼내오기
         if j == max(cnt.values()):
             answer.append(int(k))
     
