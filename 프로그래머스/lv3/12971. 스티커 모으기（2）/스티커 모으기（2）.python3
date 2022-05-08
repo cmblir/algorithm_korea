@@ -1,0 +1,18 @@
+def solution(sticker):
+    n = len(sticker)
+    if n == 1:
+        return sticker[0]
+    # DP로 구현
+    
+    table = [[0 for _ in range(n)] for _ in range(2)]
+    # 0으로 가득찬 2차원 테이블을 만든다
+    table[0][0] = sticker[0]
+    table[0][1] = sticker[0]
+    table[1][1] = sticker[1]
+    
+    for i in range(2, n - 1):
+        table[0][i] = max(table[0][i - 2] + sticker[i], table[0][i - 1])
+    for i in range(2, n):
+        table[1][i] = max(table[1][i - 2] + sticker[i], table[1][i - 1])
+    answer = max(table[0][n - 2], table[1][n - 1])
+    return answer
