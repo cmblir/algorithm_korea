@@ -1,0 +1,34 @@
+def solution(cookie):
+    # 첫쨰 아들 l ~ m
+    # 둘째 아들 m + 1 ~ r
+    answer = 0
+    n = len(cookie)
+    for i in range(n - 1):
+        lf_sum, lf_idx = cookie[i], i
+        # 왼쪽 합과 왼쪽 인덱스는 반복문의 cookie의 i 위치값과 i
+        # A[m]
+        rt_sum, rt_idx = cookie[i + 1], i + 1
+        # 오른쪽 합과 왼쪽 인덱스는 반복문의 cookie의 i + 1 위치값과
+        # i + 1값 == A[m+1]
+        
+        while True:
+            if lf_sum == rt_sum: # 좌우 합이 같다면
+                answer = max(answer, lf_sum)
+                # 정답은 answer과 현재 좌 또는 우 합중 더 큰 값
+                
+            if lf_idx > 0 and lf_sum <= rt_sum:
+                # 만약 왼쪽 인덱스 값이 0 보다 크고
+                # 왼쪽 합보다 오른쪽 합값이 크거나 같다면
+                lf_idx -= 1 # 인덱스 - 1
+                lf_sum += cookie[lf_idx] 
+                # 현재 쿠키 위치의 왼쪽 인덱스값을 합에 더한다
+            elif rt_idx < n - 1 and rt_sum <= lf_sum:
+                # 오른쪽 인덱스 값이 현재 쿠키 리스트 -1만큼의 길이보다
+                # 작고 오른쪽 합이 왼쪽 합보다 작거나 같다면
+                rt_idx += 1
+                rt_sum += cookie[rt_idx]
+                # 현재 쿠키 위치의 오른쪽 인덱스값을 합에 더한다
+            else:
+                break
+                # 만약 위의 조건문이 둘 다 아니라면
+    return answer
