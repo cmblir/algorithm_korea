@@ -16,7 +16,8 @@ for _ in range(T):
     rf_m = n // 2 # 중간값이면서 좌측값
     lf_m = rf_m # 중간값이면서 우측값
     for _ in range(10000):
-        if arr[rf_m] and arr[lf_m]:
+        if arr[rf_m] and arr[lf_m]: # 예를 들어 8의 답을 골드바흐 값을 찾을 경우
+            # 좌우측 값을 점점 좁혀가면서 rf_m과 rf_m 모두 소수일 경우를 구한다.
             print(rf_m, lf_m)
             break
         rf_m -= 1 # 우측값 1씩 감소
