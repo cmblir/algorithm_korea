@@ -1,0 +1,16 @@
+import heapq # 힙 라이브러리
+def solution(n, k):
+    heap = []
+    for i in n:
+        heapq.heappush(heap, i)
+    
+    cnt = 0
+    while heap[0] < k:
+        try:
+            heapq.heappush(heap, heapq.heappop(heap) + (heapq.heappop(heap) * 2))
+            # 기존 리스트에 있던 요소를 빼면서 뺸 스코빌 + 옆의 음식 스코빌 * 2를 하여 스코빌 지수를 업데이트해준다.
+        except IndexError: # heap[0]이 k보다 크므로
+            return -1 # while문 종료
+        cnt += 1
+    
+    return cnt
