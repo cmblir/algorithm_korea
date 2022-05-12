@@ -1,9 +1,10 @@
+from math import inf
 import sys
 input = sys.stdin.readline
 N, M, B = map(int, input().split())
 blocks = [list(map(int, input().split())) for _ in range(N)] # 현재 블록
 h = 0 # 현재 높이
-answer = 1000000000000000000000000000000 # 인벤토리의 최대길이
+answer = inf # 시간초과방지를 위한 큰수
 for i in range(257): # 현재 높이 ~ 최대 블록수
     min = 0 # 쌓을 블록
     max = 0 # 뺄 블록
@@ -21,6 +22,6 @@ for i in range(257): # 현재 높이 ~ 최대 블록수
         continue
     time = 2 * max + min # 지난 시간은 뺀 블럭 * 2 + 쌓은 블록
     if time <= answer: # 만약 인벤토리 최대크기보다 사용한 시간이 작거나 같다면
-        answer = time # 인벤토리는 시간이 된다.
+        answer = time # 현재 걸린 시간이 정답이 된다.
         h = i # 높이는 현재 위치
 print(answer, h)
