@@ -11,3 +11,8 @@
 
 - 매일 백준 문제를 통해 알고리즘을 공부하고 있습니다.
 
+<code> While Algorythm: </code>
+
+### My problem solved
+
+![wow](https://user-images.githubusercontent.com/75519839/168439947-97d6dfee-beba-43ae-b4d8-73a01883ca86.gif)
