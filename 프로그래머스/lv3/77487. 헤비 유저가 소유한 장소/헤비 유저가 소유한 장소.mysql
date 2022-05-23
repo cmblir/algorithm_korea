@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT pl.id, pl.name, pl.host_id
+from
+(select *, count(*) over (partition by host_id) as host_count
+from places) as pl
+-- host_id별로 숫자를 센다
+where pl.host_count > 1
+order by pl.id;
