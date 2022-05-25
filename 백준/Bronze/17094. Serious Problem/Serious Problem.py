@@ -1,0 +1,5 @@
+N = int(input())
+s = str(input())
+if s.count("2") == s.count("e"): print("yee")
+elif s.count("2") < s.count("e"): print("e")
+elif s.count("2") > s.count("e"): print("2")
