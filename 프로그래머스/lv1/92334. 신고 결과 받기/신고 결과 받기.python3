@@ -1,0 +1,43 @@
+def solution(id_lst, report, k):
+    result = [0] * len(id_lst)
+    report = list(set(report))
+    # 중복 신고 방지를 위해 set을 해준 다음 다시 list형태로 바꾸어준다.
+    repot = {}
+    repoted = {} 
+    
+    """
+    i.split()[0] = 신고한 사람
+    i.split()[1] = 신고당한 사람
+    """
+    for i in report:
+        if i.split()[0] not in repot:
+            # 만약 신고한 사람이 신고한 명단에 없다면
+            repot[i.split()[0]] = [i.split()[1]]
+            # 신고한 명단에 신고자, 신고당한자를 추가한다.
+        else:
+            # 신고한 사람이 있다면
+            if i.split()[1] not in repot[i.split()[0]]:
+                # 신고당한 사람이 신고한 명단의 신고자로 없다면
+                repot[i.split()[0]] += [i.split()[1]]
+                # 신고한 명단의 신고자에 신고당한 사람을 추가한다.
+        
+        if i.split()[1] not in repoted:
+            # 신고당한 사람이 신고당한 사람 명단에 없다면
+            repoted[i.split()[1]] = 1
+            # 신고당한 횟수는 1회이다.
+        else:
+            # 있다면 신고당한 횟수를 추가해준다.
+            repoted[i.split()[1]] += 1
+    
+    for i, j in repoted.items():
+        # 신고당한 사람과 횟수를 세준다.
+        if j >= k:
+            # 만약 신고당한 횟수가 특정 횟수 이상인 경우
+            for l, m in repot.items():
+                # 신고한 명단의 신고자와 신고당한 사람을 확인하여
+                if i in m:
+                    # 신고당한 사람이 신고한 명단의 신고당한 사람으로 있을 경우
+                    result[id_lst.index(l)] += 1
+                    # 결과에 해당 사람에 횟수를 추가한다 (index함수가 값을 못찾을 경우 해당 인덱스는 0이 되고 있다면 +1이 된다.)
+
+    return result
