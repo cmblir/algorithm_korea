@@ -1,0 +1,8 @@
+def solution(nums):
+    n = len(nums) // 2 # N/2마리
+    nums = list(set(nums)) # 중복을 제거한 폰켓몬 종류
+    result = 0 # 폰켓몬 종류 번호의 개수
+    for i in nums:
+        if result < n:
+            result += 1
+    return result
