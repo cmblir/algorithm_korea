@@ -1,0 +1,29 @@
+def solution(dartResult):
+    # S는 싱글, D는 더블, T는 트리플
+    # 각 수의 *n 제곱만큼
+    # 옵션에 * = 제곱, # = 마이너스
+    '''
+    *가 첫 등장시 첫 스타상 점수 2배
+    ** 연속 등장시 4배
+    *# 의 경우 -2배
+    '''
+    dict = {"S": 1,
+    "D": 2,
+    "T": 3}
+    stack = []
+    result = 0
+    dartResult = dartResult.replace("10", "A")
+    for i in dartResult:
+        if i.isdigit() or i == "A":
+            stack.append(10 if i == "A" else int(i))
+        elif i in dict.keys():
+            result = stack.pop()
+            stack.append(result ** dict[i])
+        elif i == "#":
+            stack[-1] *= -1
+        elif i == "*":
+            result = stack.pop()
+            if len(stack):
+                stack[-1] *= 2
+            stack.append(2 * result)
+    return sum(stack)
