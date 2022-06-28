@@ -1,9 +1,8 @@
 def solution(a, b): # 단순 for문 해결법
-    d = {}
+    player = {}
     for i in a:
-        d[i] = d.get(i, 0) + 1 # 사전에 해당 선수를 추가
-    for i in b:
-        d[i] -= 1 # 사전에 완주한 선수를 제거
-    dnf = [k for k, v in d.items() if v > 0] # 완주하지 못한 선수 리스트
-    answer = dnf[0]
-    return answer
+        if i not in player.keys(): player[i] = 1
+        else: player[i] += 1
+    for j in b:
+        player[j] -= 1
+    return [idx for idx, j in player.items() if j > 0][0]
