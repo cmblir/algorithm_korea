@@ -1,0 +1,1 @@
+solution = lambda x: [max(x), x.index(max(x))]
