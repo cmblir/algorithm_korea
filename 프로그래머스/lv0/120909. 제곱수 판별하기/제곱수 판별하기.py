@@ -1,0 +1,1 @@
+solution = lambda x: 1 if ".0" in str(x ** 0.5) else (2)
