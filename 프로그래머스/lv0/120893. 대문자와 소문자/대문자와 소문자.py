@@ -1,0 +1,1 @@
+solution = lambda x: "".join([i.upper() if i.islower() == True else i.lower() for i in x ])
