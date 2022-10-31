@@ -1,0 +1,1 @@
+solution = lambda x: "".join(sorted([i.lower() for i in x]))
