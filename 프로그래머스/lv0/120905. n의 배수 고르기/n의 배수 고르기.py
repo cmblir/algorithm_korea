@@ -1,0 +1,1 @@
+solution = lambda x, y: [i for i in y if i % x == 0]
