@@ -1,0 +1,1 @@
+solution = lambda x: str(x).count("3") + str(x).count("6") + str(x).count("9")
