@@ -1,0 +1,1 @@
+solution = lambda x, y : x[1:] + [x[0]] if y == "left" else [x[-1]] + x[:-1]
