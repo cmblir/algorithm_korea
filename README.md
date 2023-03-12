@@ -16,3 +16,5 @@
 ### <code> If My_problem == 'solved': </code>
 
 ![wow](https://user-images.githubusercontent.com/75519839/168439947-97d6dfee-beba-43ae-b4d8-73a01883ca86.gif) <code> break </code>
+
+`총 문제 풀이 횟수 : [0-9]`
