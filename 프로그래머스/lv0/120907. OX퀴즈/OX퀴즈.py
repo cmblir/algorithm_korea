@@ -1,3 +1,14 @@
+# 신규 풀이 방식
+def solution(quiz):
+    result = []
+    for idx in quiz:
+        idx = idx.replace("=","==")
+        if eval(idx): result.append("O")
+        else: result.append("X")
+    return result
+
+"""
+이전 풀이 방식
 def solution(quiz):
     result = []
     for idx in quiz:
@@ -11,3 +22,4 @@ def solution(quiz):
                 if int(score) == int(tmp[jdx+1]): result.append("O")
                 else: result.append("X")
     return result
+"""
