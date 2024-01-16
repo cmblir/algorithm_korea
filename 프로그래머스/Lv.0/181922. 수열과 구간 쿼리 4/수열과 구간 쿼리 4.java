@@ -6,7 +6,7 @@ class Solution {
             int compareValue = queries[j][2];
             
             for (int i = startIdx; i <= endIdx; i ++) {
-                if (i == 0 || i % compareValue == 0) {
+                if (i % compareValue == 0) {
                     arr[i] = arr[i] + 1;
                 }
             }
