@@ -1,22 +1,11 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int n, int k) {
-        ArrayList<Integer> answerList = new ArrayList<>();
+        int temp = n / k;
+        int[] answer = new int[temp];
         
-        int maxValue = k;
-        int i = 1;
-        while (true) {
-            maxValue = k * i;
-            if (maxValue > n) {
-                break;
-            }
-            i++;
-            answerList.add(maxValue);
+        for(int i = 0, j = 1; i < temp; i++, j++) {
+            answer[i] = k * j;
         }
-        
-        int[] answer = answerList.stream().mapToInt(Integer::intValue).toArray();
-        
         return answer;
     }
 }
