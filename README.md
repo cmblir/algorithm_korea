@@ -1,3 +1,5 @@
+- 언어는 Python, Java를 사용합니다.
+
 # Programmers
 
 ![programmers-logo-light](https://user-images.githubusercontent.com/75519839/161463333-6070a1aa-e43b-4ec4-90e9-fdfcf27323d7.png)
